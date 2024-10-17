@@ -5,6 +5,15 @@ const AttendanceSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     },
+    session_id: {
+        type: String,
+    },
+    course_id: {
+        type: String,
+    },
+    student_id: {
+        type: String,
+    },
     student: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Student',

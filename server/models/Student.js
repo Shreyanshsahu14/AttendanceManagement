@@ -7,7 +7,8 @@ const StudentSchema = new mongoose.Schema({
     },
     enrollmentNum:{
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     rollNum:{
         type: String,
