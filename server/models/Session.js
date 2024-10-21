@@ -20,6 +20,10 @@ const SessionSchema = new mongoose.Schema({
     enrolled_branch: {
         type: String,
         required: true
+    },
+    current_batch: {
+        type: Number,
+        required: true
     }
 } , {timestamps: true});
 

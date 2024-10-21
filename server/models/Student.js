@@ -19,7 +19,7 @@ const StudentSchema = new mongoose.Schema({
         required: true
     },
     enrolledYear: {
-        type: String,
+        type: Number,
         required: true
     }
 }, { timestamps: true });

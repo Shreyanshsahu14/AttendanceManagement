@@ -11,7 +11,10 @@ const courseSchema = new mongoose.Schema({
         required: true
     },
     enrolled_Students: {
-        type: []
+        type: [{
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Student'
+        }]
     },
     professor: {
         type: mongoose.Schema.Types.ObjectId,

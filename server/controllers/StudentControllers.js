@@ -3,14 +3,14 @@ const Student = require("../models/Student");
 exports.createStudent = async (req,res) => {
     const {name , enrollmentNum , rollNum  , enrolledBranch , enrolledYear} = req.body
 
-    if (name.trim() == "" || enrollmentNum.trim() == "" || rollNum.trim() == "" || !enrolledYear || !enrolledBranch) {
+    if (name.trim() == "" || enrollmentNum.trim() == "" || rollNum.trim() == "" || !enrolledYear || !enrolledBranch.trim()) {
         return res.status(403).send({
             success: false,
             message: "All Fields are required",
         });
     }
     
-    const newStudent = await Student.create({nama, enrollmentNum, rollNum , enrolledBranch , enrolledYear});
+    const newStudent = await Student.create({name, enrollmentNum, rollNum , enrolledBranch , enrolledYear});
 
     if (!newStudent) {
         return res.status(403).send({
