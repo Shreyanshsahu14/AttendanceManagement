@@ -7,7 +7,8 @@ const StudentSchema = new mongoose.Schema({
     },
     enrollmentNum:{
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     rollNum:{
         type: String,
@@ -18,7 +19,7 @@ const StudentSchema = new mongoose.Schema({
         required: true
     },
     enrolledYear: {
-        type: String,
+        type: Number,
         required: true
     }
 }, { timestamps: true });

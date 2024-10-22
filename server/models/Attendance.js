@@ -5,6 +5,22 @@ const AttendanceSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     },
+    session: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Session',
+        required: true
+    },
+    course: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Course',
+        required: true
+    },
+    student: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Student',
+        required: true
+    }
+    ,
     student: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Student',
@@ -17,10 +33,8 @@ const AttendanceSchema = new mongoose.Schema({
     marked_by: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
-        required: true 
+        required: true
     }
 }, { timestamps: true });
 
-const Attendance = mongoose.model('Attendance', AttendanceSchema);
-
-module.exports = Attendance;
+module.exports = mongoose.model('Attendance', AttendanceSchema);
