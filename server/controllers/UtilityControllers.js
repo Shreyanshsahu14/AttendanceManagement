@@ -31,4 +31,52 @@ exports.copyStudentsFromPreviousSession = async (req, res) => {
       });
     }
   };
+
+    // import React from 'react';
+
+    // // Function to convert JSON to CSV format
+    // const convertToCSV = (data) => {
+    //   const headers = Object.keys(data[0]); // Extract the headers
+    //   const rows = data.map(obj => headers.map(header => obj[header])); // Extract rows
+    //   const csv = [headers, ...rows].map(row => row.join(',')).join('\n'); // Format as CSV
+    //   return csv;
+    // };
+    
+    // // Function to download CSV
+    // const downloadCSV = (data, filename = 'export.csv') => {
+    //   const csv = convertToCSV(data);
+    //   const blob = new Blob([csv], { type: 'text/csv' });
+    //   const url = window.URL.createObjectURL(blob);
+    
+    //   const link = document.createElement('a');
+    //   link.href = url;
+    //   link.download = filename;
+    //   document.body.appendChild(link);
+    //   link.click();
+    //   document.body.removeChild(link);
+    // };
+    
+    // // React Component
+    // const ExportCSV = () => {
+    //   // Sample data to export
+    //   const data = [
+    //     { name: 'John Doe', age: 25, course: 'B.Tech' },
+    //     { name: 'Jane Smith', age: 22, course: 'B.Tech' },
+    //     { name: 'Sam Green', age: 24, course: 'B.Tech' },
+    //   ];
+    
+    //   // Button to trigger CSV download
+    //   return (
+    //     <div>
+    //       <h2>Export Data to CSV</h2>
+    //       <button onClick={() => downloadCSV(data, 'students.csv')}>
+    //         Download CSV
+    //       </button>
+    //     </div>
+    //   );
+    // };
+    
+    // export default ExportCSV;
+    
+  };
   
