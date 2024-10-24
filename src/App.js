@@ -37,6 +37,15 @@ import ForgotPasswordPage from './components/ForgotPasswordPage';
 import AttendanceApp from './AttendanceApp/AttendanceApp'; // Import AttendanceApp
 
 function App() {
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      const token = JSON.parse(localStorage.getItem("token"))
+      dispatch(getUserDetails(token, navigate))
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
   return (
     <Router>
       <div className="App">
