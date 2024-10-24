@@ -5,12 +5,12 @@ toggleAttendance
 }=require("../controllers/AttendanceController");
 const {
     addCourse,
-    editCourse
+    editCourse,
 }=require("../controllers/CourseController");
 
 const {
     deleteStudent,
-    createStudent
+    createStudent,
     }=require("../controllers/StudentControllers");
 const {
     getAllSessions,
@@ -29,3 +29,6 @@ const {
     router.post("/createSessions",createSessions);
     router.post("/copyStudentsFromPreviousSession",copyStudentsFromPreviousSession);
     router.get("/getAllSessions",getAllSessions);
+    router.post("/toggleAttendance",toggleAttendance);
+    
+    module.exports = router;

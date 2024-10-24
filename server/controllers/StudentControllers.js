@@ -1,6 +1,7 @@
 const Student = require("../models/Student");
 
 exports.createStudent = async (req,res) => {
+  try{
     const {name , enrollmentNum , rollNum  , enrolledBranch , enrolledYear} = req.body
 
     if (name.trim() == "" || enrollmentNum.trim() == "" || rollNum.trim() == "" || !enrolledYear || !enrolledBranch.trim()) {
@@ -24,10 +25,17 @@ exports.createStudent = async (req,res) => {
         newStudent,
         message: "Student created Successfully"
     })
+  }
+catch(error){
+    return res.status(200).json({
+        success: true,
+        message: "Student creation Failed"
+    })
+}
 }
 
 exports.deleteStudent = async (req,res) => {
-    const {name , enrollmentNum} = req.body;
+   try{ const {name , enrollmentNum} = req.body;
 
     if (!name.trim() || !enrollmentNum.trim()) {
         return res.status(400).send({
@@ -49,4 +57,10 @@ exports.deleteStudent = async (req,res) => {
         success: true,
         message: "Student removed Successfully"
     })
+}catch(error){
+    return res.status(200).json({
+        success: false,
+        message: "Student removed failed"
+    })
+}
 }
