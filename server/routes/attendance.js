@@ -26,9 +26,8 @@ const {
     router.post("/deleteStudent",deleteStudent);
     router.post("/createStudent",createStudent);
     router.post("/createNewSessions",createNewSessions);
-    router.post("/createSessions",createSessions);
+    // router.post("/createSessions",createSessions);
     router.post("/copyStudentsFromPreviousSession",copyStudentsFromPreviousSession);
     router.get("/getAllSessions",getAllSessions);
     router.post("/toggleAttendance",toggleAttendance);
-    
     module.exports = router;
